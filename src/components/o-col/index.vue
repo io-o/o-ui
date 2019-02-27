@@ -1,0 +1,42 @@
+<template>
+  <div :class="'o-col-' + span" :style="gutter">
+    <slot />
+  </div>
+</template>
+
+<script type="text/javascript">
+export default {
+  props: {
+    span: {
+      type: Number,
+      default: 24
+    }
+  },
+  computed: {
+    gutter() {
+      if (this.$parent.$options._componentTag === 'o-row' && this.$parent.gutter !== 0) {
+        return {
+          paddingLeft: `${ this.$parent.gutter / 2 }px`,
+          paddingRight: `${ this.$parent.gutter / 2 }px`
+        }
+      }
+    }
+  },
+
+  created () {
+
+  },
+
+  methods: {
+
+  },
+}
+</script>
+
+<style lang="stylus">
+for i in 4 6 8 12 24
+  .o-col-{i}
+    width unit(100/24*i, '%')
+    display inline-block
+    box-sizing border-box
+</style>

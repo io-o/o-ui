@@ -1,5 +1,5 @@
 <template>
-  <div :class="'o-col-' + span" :style="gutter">
+  <div :class="['o-col-' + span, 'o-col-offset-' + offset]" :style="gutter">
     <slot />
   </div>
 </template>
@@ -10,6 +10,10 @@ export default {
     span: {
       type: Number,
       default: 24
+    },
+    offset: {
+      type: Number,
+      default: 0
     }
   },
   computed: {
@@ -39,4 +43,7 @@ for i in 4 6 8 12 24
     width unit(100/24*i, '%')
     display inline-block
     box-sizing border-box
+for i in 1 2 3 4 5 6
+  .o-col-offset-{i}
+    margin-left unit(100/24*i, '%')
 </style>

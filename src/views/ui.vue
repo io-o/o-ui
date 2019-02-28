@@ -7,9 +7,7 @@
       <o-col :span="12">
         <div class="item">12</div>
       </o-col>
-      <o-col
-        :span="12"
-      >
+      <o-col :span="12">
         <div class="item">12</div>
       </o-col>
       <o-col :span="8">
@@ -23,15 +21,29 @@
       </o-col>
     </o-row>
     <h3>offset</h3>
-    <o-row :gutter="20">
+    <o-row>
       <o-col :span="6">
         <div class="item">6</div>
       </o-col>
       <o-col
         :span="6"
-        :offset="6"
+        :offset="5"
       >
         <div class="item">6</div>
+      </o-col>
+      <o-col
+        :span="6"
+        :offset="1"
+      >
+        <div class="item">6</div>
+      </o-col>
+    </o-row>
+    <o-row type="flex" justify="center">
+      <o-col
+        :span="6"
+        :offset="1"
+      >
+        <div class="item">center</div>
       </o-col>
     </o-row>
   </div>
@@ -45,28 +57,14 @@ export default {
     oRow,
     oCol
   },
-
-  data() {
-    return {
-
-    }
-  },
-
-  created() {
-
-  },
-
-  methods: {
-
-  },
 }
 </script>
 
 <style lang="stylus">
-.item {
-  background-color: #99a9bf;
-  text-align: center;
-  border-radius: 5px;
-  margin: 5px 0;
-}
+.item
+  background-color #99a9bf
+  text-align center
+  border-radius 5px
+  margin 5px 0
+
 </style>

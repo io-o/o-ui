@@ -18,23 +18,22 @@ export default {
   },
   computed: {
     gutter() {
-      if (this.$parent.$options._componentTag === 'o-row' && this.$parent.gutter !== 0) {
+      if (
+        this.$parent.$options._componentTag === "o-row" &&
+        this.$parent.gutter !== 0
+      ) {
         return {
-          paddingLeft: `${ this.$parent.gutter / 2 }px`,
-          paddingRight: `${ this.$parent.gutter / 2 }px`
-        }
+          paddingLeft: `${this.$parent.gutter / 2}px`,
+          paddingRight: `${this.$parent.gutter / 2}px`
+        };
       }
     }
   },
 
-  created () {
+  created() {},
 
-  },
-
-  methods: {
-
-  },
-}
+  methods: {}
+};
 </script>
 
 <style lang="stylus">

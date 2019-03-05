@@ -1,7 +1,7 @@
 <template>
   <div
     :style="[rowGutter, getJustifyStyle]"
-    :class="['o-row', {'o-row--flex': this.type === 'flex'}]"
+    :class="['o-row', { 'o-row--flex': this.type === 'flex' }]"
   >
     <slot />
   </div>
@@ -17,71 +17,67 @@ export default {
     type: String,
     justify: {
       type: String,
-      default: ''
-    },
+      default: ""
+    }
   },
   computed: {
     rowGutter() {
       if (this.gutter !== 0) {
-        const res = {}
-        res.marginLeft = `-${this.gutter / 2}px`
-        res.marginRight = res.paddingLeft
-        return res
+        const res = {};
+        res.marginLeft = `-${this.gutter / 2}px`;
+        res.marginRight = res.paddingLeft;
+        return res;
       }
     },
     getJustifyStyle() {
-      if (this.justify !== '') {
+      if (this.justify !== "") {
         let justifyStyle = "";
         switch (this.justify) {
-          case 'start':
+          case "start":
             justifyStyle = {
-              justifyContent: 'flex-start',
-            }
+              justifyContent: "flex-start"
+            };
             break;
-          case 'end':
+          case "end":
             justifyStyle = {
-              justifyContent: 'flex-end',
-            }
+              justifyContent: "flex-end"
+            };
             break;
-          case 'center':
+          case "center":
             justifyStyle = {
-              justifyContent: 'center',
-            }
+              justifyContent: "center"
+            };
             break;
-          case 'space-around':
+          case "space-around":
             justifyStyle = {
-              justifyContent: 'space-around',
-            }
+              justifyContent: "space-around"
+            };
             break;
-          case 'space-between':
+          case "space-between":
             justifyStyle = {
-              justifyContent: 'space-between',
-            }
+              justifyContent: "space-between"
+            };
             break;
-          case 'space-evenly':
+          case "space-evenly":
             justifyStyle = {
-              justifyContent: 'space-evenly',
-            }
+              justifyContent: "space-evenly"
+            };
             break;
           default:
             justifyStyle = {
-              justifyContent: this.justify,
-            }
+              justifyContent: this.justify
+            };
             break;
         }
-        return justifyStyle
+        return justifyStyle;
       }
     }
   },
 
-  created() {
+  created() {},
 
-  },
-
-  methods: {
-
-  },
-}
+  methods: {}
+};
 </script>
 
 <style lang="stylus">

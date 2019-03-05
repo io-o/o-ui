@@ -1,5 +1,5 @@
-import Vue from "vue"
-import Router from "vue-router"
+import Vue from "vue";
+import Router from "vue-router";
 
 Vue.use(Router);
 
@@ -10,7 +10,7 @@ export default new Router({
     {
       path: "/",
       name: "ui",
-      component: () => import('@/views/ui.vue')
+      component: () => import("@/views/ui.vue")
     }
   ]
-})
+});

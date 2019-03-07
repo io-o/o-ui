@@ -45,6 +45,8 @@
        <o-main>Main</o-main>
        </o-container>
     </o-container>
+    <o-radio v-model="radio" label="1">111</o-radio>
+    <o-radio v-model="radio" label="2">222</o-radio>
   </div>
 </template>
 
@@ -56,6 +58,7 @@ import oHeader from "@/components/o-header/index.vue";
 import oMain from "@/components/o-main/index.vue";
 import oFooter from "@/components/o-footer/index.vue";
 import oAside from "@/components/o-aside/index.vue";
+import oRadio from "@/components/o-radio/index.vue";
 export default {
   components: {
     oRow,
@@ -64,7 +67,13 @@ export default {
     oHeader,
     oFooter,
     oMain,
-    oAside
+    oAside,
+    oRadio
+  },
+  data () {
+    return {
+      radio: '1'
+    }
   }
 };
 </script>

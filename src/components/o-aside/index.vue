@@ -1,5 +1,8 @@
 <template>
-  <div class="o-aside" :style="getWidth">
+  <div
+    class="o-aside"
+    :style="getWidth"
+  >
     <slot />
   </div>
 </template>
@@ -9,8 +12,8 @@ export default {
   props: {
     width: {
       type: String,
-      default: "300px"
-    }
+      default: "300px",
+    },
   },
 
   computed: {
@@ -18,7 +21,7 @@ export default {
       let res = {};
       res.width = this.width;
       return res;
-    }
-  }
+    },
+  },
 };
 </script>

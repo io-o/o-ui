@@ -1,5 +1,8 @@
 <template>
-  <div class="o-header" :style="heightStyle">
+  <div
+    class="o-header"
+    :style="heightStyle"
+  >
     <slot />
   </div>
 </template>
@@ -9,8 +12,8 @@ export default {
   props: {
     height: {
       type: Number,
-      default: 60
-    }
+      default: 60,
+    },
   },
 
   computed: {
@@ -18,8 +21,8 @@ export default {
       let res = {};
       res.height = `${this.height}px`;
       return res;
-    }
-  }
+    },
+  },
 };
 </script>
 

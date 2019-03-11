@@ -10,7 +10,7 @@ export default new Router({
     {
       path: "/",
       name: "ui",
-      component: () => import("@/views/ui.vue")
-    }
-  ]
+      component: () => import("@/views/ui.vue"),
+    },
+  ],
 });

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <o-row :gutter="20">
       <o-col :span="24">
         <div class="item">24</div>
@@ -40,42 +40,41 @@
     <h3>container</h3>
     <o-container>
       <o-header>header</o-header>
-       <o-container>
-         <o-aside width="200px">Aside</o-aside>
-       <o-main>Main</o-main>
-       </o-container>
+      <o-container>
+        <o-aside width="200px">Aside</o-aside>
+        <o-main>Main</o-main>
+      </o-container>
     </o-container>
+    <h3>{{radio}}</h3>
     <o-radio v-model="radio" label="1">111</o-radio>
     <o-radio v-model="radio" label="2">222</o-radio>
   </div>
 </template>
 
 <script type="text/javascript">
-import oRow from "@/components/o-row/index.vue";
-import oCol from "@/components/o-col/index.vue";
-import oContainer from "@/components/o-container/index.vue";
-import oHeader from "@/components/o-header/index.vue";
-import oMain from "@/components/o-main/index.vue";
-import oFooter from "@/components/o-footer/index.vue";
-import oAside from "@/components/o-aside/index.vue";
-import oRadio from "@/components/o-radio/index.vue";
+import oRow from "@/components/o-row/index.vue"
+import oCol from "@/components/o-col/index.vue"
+import oContainer from "@/components/o-container/index.vue"
+import oHeader from "@/components/o-header/index.vue"
+import oMain from "@/components/o-main/index.vue"
+import oAside from "@/components/o-aside/index.vue"
+import oRadio from "@/components/o-radio/index.vue"
 export default {
   components: {
     oRow,
     oCol,
     oContainer,
     oHeader,
-    oFooter,
     oMain,
     oAside,
     oRadio
   },
-  data () {
+  data() {
     return {
       radio: '1'
     }
   }
-};
+}
 </script>
 
 <style lang="stylus">
@@ -89,4 +88,6 @@ export default {
   color #333
   text-align center
   line-height 60px
+.app-container
+  padding 20px
 </style>

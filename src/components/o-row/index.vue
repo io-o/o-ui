@@ -12,16 +12,16 @@ export default {
   props: {
     gutter: {
       type: Number,
-      default: 0
+      default: 0,
     },
     type: String,
     justify: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   computed: {
-    rowGutter() {
+    rowGutter () {
       if (this.gutter !== 0) {
         const res = {};
         res.marginLeft = `-${this.gutter / 2}px`;
@@ -29,59 +29,54 @@ export default {
         return res;
       }
     },
-    getJustifyStyle() {
+    getJustifyStyle () {
       if (this.justify !== "") {
         let justifyStyle = "";
         switch (this.justify) {
           case "start":
             justifyStyle = {
-              justifyContent: "flex-start"
+              justifyContent: "flex-start",
             };
             break;
           case "end":
             justifyStyle = {
-              justifyContent: "flex-end"
+              justifyContent: "flex-end",
             };
             break;
           case "center":
             justifyStyle = {
-              justifyContent: "center"
+              justifyContent: "center",
             };
             break;
           case "space-around":
             justifyStyle = {
-              justifyContent: "space-around"
+              justifyContent: "space-around",
             };
             break;
           case "space-between":
             justifyStyle = {
-              justifyContent: "space-between"
+              justifyContent: "space-between",
             };
             break;
           case "space-evenly":
             justifyStyle = {
-              justifyContent: "space-evenly"
+              justifyContent: "space-evenly",
             };
             break;
           default:
             justifyStyle = {
-              justifyContent: this.justify
+              justifyContent: this.justify,
             };
             break;
         }
         return justifyStyle;
       }
     }
-  },
-
-  created() {},
-
-  methods: {}
-};
+  }
+}
 </script>
 
 <style lang="stylus">
-.o-row--flex {
-  display: flex;
-}
+.o-row--flex
+  display flex
 </style>

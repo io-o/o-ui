@@ -1,5 +1,8 @@
 <template>
-  <div :class="['o-col-' + span, 'o-col-offset-' + offset]" :style="gutter">
+  <div
+    :class="['o-col-' + span, 'o-col-offset-' + offset]"
+    :style="gutter"
+  >
     <slot />
   </div>
 </template>
@@ -9,12 +12,12 @@ export default {
   props: {
     span: {
       type: Number,
-      default: 24
+      default: 24,
     },
     offset: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
     gutter() {
@@ -24,15 +27,15 @@ export default {
       ) {
         return {
           paddingLeft: `${this.$parent.gutter / 2}px`,
-          paddingRight: `${this.$parent.gutter / 2}px`
+          paddingRight: `${this.$parent.gutter / 2}px`,
         };
       }
-    }
+    },
   },
 
   created() {},
 
-  methods: {}
+  methods: {},
 };
 </script>
 

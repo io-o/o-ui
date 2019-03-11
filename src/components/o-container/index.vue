@@ -9,28 +9,28 @@ export default {
   props: {
     direction: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   computed: {
     isVertical() {
       if (this.direction === 'vertical') {
-        return true
+        return true;
       } else if (this.direction === 'horizontal') {
-        return false
+        return false;
       }
       return this.$slots && this.$slots.default
         ? this.$slots.default.some(vnode => {
-          const tag = vnode.componentOptions && vnode.componentOptions.tag
-          return tag === 'o-header' || tag === 'o-footer'
+          const tag = vnode.componentOptions && vnode.componentOptions.tag;
+          return tag === 'o-header' || tag === 'o-footer';
         })
-        : false
-    }
+        : false;
+    },
   },
 
   created() { },
 
-  methods: {}
+  methods: {},
 };
 </script>
 

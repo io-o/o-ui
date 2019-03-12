@@ -22,7 +22,7 @@
     "no-extra-boolean-cast": "off",
     "semi": [
       "error",
-      "always"
+      "never"
     ],
     "vue/require-prop-types": "off",
     "vue/require-default-prop": "off",

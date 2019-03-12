@@ -46,7 +46,7 @@
       </o-container>
     </o-container>
     <h3>{{radio}}</h3>
-    <o-radio v-model="radio" label="1">111</o-radio>
+    <o-radio v-model="radio" label="1" disabled>111</o-radio>
     <o-radio v-model="radio" label="2">222</o-radio>
   </div>
 </template>

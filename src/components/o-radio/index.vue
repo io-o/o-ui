@@ -1,15 +1,28 @@
 <template>
   <div>
-    <label :class="{'o-radio': true, 'is-checked': isChecked }">
-      <span :class="{'o-radio_input': true, 'is-checked': isChecked}" >
+    <label
+      :class="{
+        'o-radio': true,
+        'is-checked': isChecked,
+        'is-disabled': disabled
+      }"
+    >
+      <span
+        :class="{
+          'o-radio_input': true,
+          'is-checked': isChecked,
+          'is-disabled': disabled
+        }"
+      >
         <span class="o-radio_inner"></span>
         <input
-        type="radio"
-        :value="label"
-        :checked="cvalue == label"
-        @change="$emit('change', label)"
-        class="o-radio__original"
-      >
+          type="radio"
+          :value="label"
+          :disabled="disabled"
+          :checked="cvalue == label"
+          class="o-radio__original"
+          @change="$emit('change', label)"
+        />
       </span>
       <span class="o-radio__label"><slot /></span>
     </label>
@@ -25,12 +38,13 @@ export default {
   props: {
     label: Number | String | Boolean,
     cvalue: Number | String | Boolean,
+    disabled: Boolean,
   },
   computed: {
-    isChecked () {
+    isChecked() {
       return this.cvalue === this.label
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -62,8 +76,14 @@ export default {
       opacity 0
 .is-checked
   background-color white
-.o-radio_input.is-checked + .o-radio__label
-  color #409EFF
-.o-radio_input.is-checked .o-radio_inner
-  background-color #409EFF
+.o-radio_input
+  &.is-checked + .o-radio__label
+    color #409EFF
+  &.is-checked .o-radio_inner
+    background-color #409EFF
+  &.is-disabled + .o-radio__label
+    color #C0C4CC
+  &.is-disabled .o-radio_inner
+    background-color #C0C4CC
+    cursor not-allowed
 </style>

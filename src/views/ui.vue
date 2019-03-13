@@ -46,8 +46,14 @@
       </o-container>
     </o-container>
     <h3>{{radio}}</h3>
-    <o-radio v-model="radio" label="1" disabled>111</o-radio>
-    <o-radio v-model="radio" label="2">222</o-radio>
+    <!-- <o-radio v-model="radio" label="1" >111</o-radio>
+    <o-radio v-model="radio" label="2">222</o-radio> -->
+    <h3>单选按钮组</h3>
+    <o-radio-group v-model="radio2">
+    <o-radio :label="3">备选项</o-radio>
+    <o-radio :label="6">备选项</o-radio>
+    <o-radio :label="9">备选项</o-radio>
+  </o-radio-group>
   </div>
 </template>
 
@@ -59,6 +65,7 @@ import oHeader from "@/components/o-header/index.vue"
 import oMain from "@/components/o-main/index.vue"
 import oAside from "@/components/o-aside/index.vue"
 import oRadio from "@/components/o-radio/index.vue"
+import oRadioGroup from '@/components/o-radio-group/index.vue'
 export default {
   components: {
     oRow,
@@ -67,11 +74,13 @@ export default {
     oHeader,
     oMain,
     oAside,
-    oRadio
+    oRadio,
+    oRadioGroup
   },
   data() {
     return {
-      radio: '1'
+      radio: '1',
+      radio2: '3'
     }
   }
 }

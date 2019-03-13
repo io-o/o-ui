@@ -19,9 +19,9 @@
           type="radio"
           :value="label"
           :disabled="disabled"
-          :checked="cvalue == label"
+          :checked="isChecked"
+          v-model="model"
           class="o-radio__original"
-          @change="$emit('change', label)"
         />
       </span>
       <span class="o-radio__label"><slot /></span>
@@ -30,20 +30,46 @@
 </template>
 
 <script type="text/javascript">
+import Emitter from '@/mixins/emitter'
 export default {
-  model: {
-    prop: 'cvalue',
-    event: 'change',
-  },
+  name: 'oRadio',
+  componentName: 'oRadio',
+  mixins: [Emitter],
   props: {
     label: Number | String | Boolean,
-    cvalue: Number | String | Boolean,
     disabled: Boolean,
+    value: {}
   },
   computed: {
     isChecked() {
-      return this.cvalue === this.label
+      return this.model == this.label
     },
+    model: {
+      get(val) {
+        return this.isGroup ? this._radioGroup.value : this.value
+      },
+      set(val) {
+        if (this.isGroup) {
+          this.dispatch('oRadioGroup', 'input', [val])
+        } else {
+          this.$emit('input', val)
+        }
+      }
+    },
+    isGroup() {
+      let parent = this.$parent
+      while (parent) {
+        if (parent.$options.componentName !== 'oRadioGroup') {
+          parent = parent.$parent
+        } else {
+          console.log(1111);
+          
+          this._radioGroup = parent
+          return true
+        }
+      }
+      return false
+    }
   },
 }
 </script>

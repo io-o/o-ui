@@ -8,13 +8,14 @@
 import Emitter from '@/mixins/emitter'
 export default {
   name: 'oRadioGroup',
+
   componentName: 'oRadioGroup',
+
   mixins: [Emitter],
+
   props: {
-    value: {}
-  }
+    value: {},
+    size: '',
+  },
 }
 </script>
-
-<style lang="stylus">
-</style>

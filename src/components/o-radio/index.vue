@@ -33,22 +33,26 @@
 import Emitter from '@/mixins/emitter'
 export default {
   name: 'oRadio',
+
   componentName: 'oRadio',
+
   mixins: [Emitter],
+
   props: {
     label: Number | String | Boolean,
     disabled: Boolean,
     value: {}
   },
+
   computed: {
-    isChecked() {
+    isChecked () {
       return this.model == this.label
     },
     model: {
-      get(val) {
+      get (val) {
         return this.isGroup ? this._radioGroup.value : this.value
       },
-      set(val) {
+      set (val) {
         if (this.isGroup) {
           this.dispatch('oRadioGroup', 'input', [val])
         } else {
@@ -56,20 +60,18 @@ export default {
         }
       }
     },
-    isGroup() {
+    isGroup () {
       let parent = this.$parent
       while (parent) {
         if (parent.$options.componentName !== 'oRadioGroup') {
           parent = parent.$parent
         } else {
-          console.log(1111);
-          
           this._radioGroup = parent
           return true
         }
       }
       return false
-    }
+    },
   },
 }
 </script>

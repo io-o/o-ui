@@ -7,7 +7,7 @@
 <script type="text/javascript">
 import Emitter from '@/mixins/emitter'
 export default {
-  name: 'oRadioGroup',
+  name: 'ORadioGroup',
 
   componentName: 'oRadioGroup',
 
@@ -15,7 +15,6 @@ export default {
 
   props: {
     value: {},
-    size: '',
   },
 }
 </script>

@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 export default {
+  name: 'OHeader',
   props: {
     height: {
       type: Number,
@@ -18,12 +19,12 @@ export default {
 
   computed: {
     heightStyle() {
-      let res = {};
-      res.height = `${this.height}px`;
-      return res;
+      let res = {}
+      res.height = `${this.height}px`
+      return res
     },
   },
-};
+}
 </script>
 
 <style lang="stylus"></style>

@@ -14,15 +14,15 @@
           'is-disabled': disabled
         }"
       >
-        <span class="o-radio_inner"></span>
+        <span class="o-radio_inner"/>
         <input
           type="radio"
           :value="label"
           :disabled="disabled"
-          :checked="isChecked"
           v-model="model"
+          :checked="isChecked"
           class="o-radio__original"
-        />
+        >
       </span>
       <span class="o-radio__label"><slot /></span>
     </label>
@@ -32,8 +32,7 @@
 <script type="text/javascript">
 import Emitter from '@/mixins/emitter'
 export default {
-  name: 'oRadio',
-
+  name: 'ORadio',
   componentName: 'oRadio',
 
   mixins: [Emitter],
@@ -41,7 +40,7 @@ export default {
   props: {
     label: Number | String | Boolean,
     disabled: Boolean,
-    value: {}
+    value: {},
   },
 
   computed: {
@@ -58,7 +57,7 @@ export default {
         } else {
           this.$emit('input', val)
         }
-      }
+      },
     },
     isGroup () {
       let parent = this.$parent

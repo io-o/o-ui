@@ -6,14 +6,8 @@
 
 <script type="text/javascript">
 export default {
-  data() {
-    return {};
-  },
-
-  created() {},
-
-  methods: {},
-};
+  name: 'OMain',
+}
 </script>
 
 <style lang="stylus">

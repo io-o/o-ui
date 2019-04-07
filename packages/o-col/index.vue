@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 export default {
+  name: 'OCol',
   props: {
     span: {
       type: Number,
@@ -28,7 +29,7 @@ export default {
         return {
           paddingLeft: `${this.$parent.gutter / 2}px`,
           paddingRight: `${this.$parent.gutter / 2}px`,
-        };
+        }
       }
     },
   },
@@ -36,7 +37,7 @@ export default {
   created() {},
 
   methods: {},
-};
+}
 </script>
 
 <style lang="stylus">

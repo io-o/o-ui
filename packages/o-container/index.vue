@@ -6,6 +6,7 @@
 
 <script type="text/javascript">
 export default {
+  name: 'OContainer',
   props: {
     direction: {
       type: String,
@@ -15,23 +16,23 @@ export default {
   computed: {
     isVertical() {
       if (this.direction === 'vertical') {
-        return true;
+        return true
       } else if (this.direction === 'horizontal') {
-        return false;
+        return false
       }
       return this.$slots && this.$slots.default
         ? this.$slots.default.some(vnode => {
-          const tag = vnode.componentOptions && vnode.componentOptions.tag;
-          return tag === 'o-header' || tag === 'o-footer';
+          const tag = vnode.componentOptions && vnode.componentOptions.tag
+          return tag === 'o-header' || tag === 'o-footer'
         })
-        : false;
+        : false
     },
   },
 
   created() { },
 
   methods: {},
-};
+}
 </script>
 
 <style lang="stylus">

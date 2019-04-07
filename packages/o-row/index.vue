@@ -1,7 +1,7 @@
 <template>
   <div
     :style="[rowGutter, getJustifyStyle]"
-    :class="['o-row', { 'o-row--flex': this.type === 'flex' }]"
+    :class="['o-row', { 'o-row--flex': type === 'flex' }]"
   >
     <slot />
   </div>
@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 export default {
+  name: 'ORow',
   props: {
     gutter: {
       type: Number,
@@ -23,56 +24,56 @@ export default {
   computed: {
     rowGutter () {
       if (this.gutter !== 0) {
-        const res = {};
-        res.marginLeft = `-${this.gutter / 2}px`;
-        res.marginRight = res.paddingLeft;
-        return res;
+        const res = {}
+        res.marginLeft = `-${this.gutter / 2}px`
+        res.marginRight = res.paddingLeft
+        return res
       }
     },
     getJustifyStyle () {
       if (this.justify !== "") {
-        let justifyStyle = "";
+        let justifyStyle = ""
         switch (this.justify) {
           case "start":
             justifyStyle = {
               justifyContent: "flex-start",
-            };
-            break;
+            }
+            break
           case "end":
             justifyStyle = {
               justifyContent: "flex-end",
-            };
-            break;
+            }
+            break
           case "center":
             justifyStyle = {
               justifyContent: "center",
-            };
-            break;
+            }
+            break
           case "space-around":
             justifyStyle = {
               justifyContent: "space-around",
-            };
-            break;
+            }
+            break
           case "space-between":
             justifyStyle = {
               justifyContent: "space-between",
-            };
-            break;
+            }
+            break
           case "space-evenly":
             justifyStyle = {
               justifyContent: "space-evenly",
-            };
-            break;
+            }
+            break
           default:
             justifyStyle = {
               justifyContent: this.justify,
-            };
-            break;
+            }
+            break
         }
-        return justifyStyle;
+        return justifyStyle
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

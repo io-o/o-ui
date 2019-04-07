@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 export default {
+  name: 'OAside',
   props: {
     width: {
       type: String,
@@ -18,10 +19,10 @@ export default {
 
   computed: {
     getWidth() {
-      let res = {};
-      res.width = this.width;
-      return res;
+      let res = {}
+      res.width = this.width
+      return res
     },
   },
-};
+}
 </script>

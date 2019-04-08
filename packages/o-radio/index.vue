@@ -14,12 +14,12 @@
           'is-disabled': disabled
         }"
       >
-        <span class="o-radio_inner"/>
+        <span class="o-radio_inner" />
         <input
+          v-model="model"
           type="radio"
           :value="label"
           :disabled="disabled"
-          v-model="model"
           :checked="isChecked"
           class="o-radio__original"
         >

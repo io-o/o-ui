@@ -12,5 +12,10 @@ export default new Router({
       name: "ui",
       component: () => import("@/views/ui.vue"),
     },
+    {
+      path: "/menu-page",
+      name: "menu-page",
+      component: () => import("@/views/menu-page.vue"),
+    },
   ],
 })

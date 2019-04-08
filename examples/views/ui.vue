@@ -16,18 +16,15 @@ export default {
   data () {
     return {
       offset: 0.8,
+      list: [
+        {
+          name: 'lilei',
+        },
+        {
+          name: 'hanmeimei',
+        },
+      ],
     }
-  },
-
-  created () {
-
-  },
-
-  methods: {
-
   },
 }
 </script>
-
-<style lang="stylus" scoped>
-</style>

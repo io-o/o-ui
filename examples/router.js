@@ -17,5 +17,10 @@ export default new Router({
       name: "menu-page",
       component: () => import("@/views/menu-page.vue"),
     },
+    {
+      path: "/jsx",
+      name: "jsx",
+      component: () => import("@/views/jsx-p.vue"),
+    },
   ],
 })

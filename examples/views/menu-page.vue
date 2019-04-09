@@ -1,21 +1,5 @@
 <template>
   <div class="menu-box">
-    <!-- <o-menu>
-      <o-menu-item>111</o-menu-item>
-      <o-menu-item>222</o-menu-item>
-      <o-sub-menu>
-        <div slot="title">
-          sub
-        </div>
-        <o-menu-item>sub-111</o-menu-item>
-        <o-sub-menu>
-          <div slot="title">
-            sub-child
-          </div>
-          <o-menu-item>sub-child-111</o-menu-item>
-        </o-sub-menu>
-      </o-sub-menu>
-    </o-menu> -->
     <o-menu>
       <template
         v-for="(item, index) in list"

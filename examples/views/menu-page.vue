@@ -59,17 +59,5 @@ export default {
       ],
     }
   },
-
-  created () {
-
-  },
-
-  methods: {
-
-  },
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>

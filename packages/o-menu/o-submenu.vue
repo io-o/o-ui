@@ -11,8 +11,10 @@
           :style="{ transform: `rotateZ(${showChild ? 0 : 180}deg)` }"
         >^</span>
       </div>
-      <div v-show="showChild"
-class="o-submenu-child-box">
+      <div
+        v-show="showChild"
+        class="o-submenu-child-box"
+      >
         <slot /> 
       </div>
     </ul>

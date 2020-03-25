@@ -22,5 +22,10 @@ export default new Router({
       name: "jsx",
       component: () => import("@/views/jsx-p.vue"),
     },
+    {
+      path: "/message",
+      name: "message",
+      component: () => import("@/views/message.vue"),
+    },
   ],
 })

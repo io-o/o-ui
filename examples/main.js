@@ -8,7 +8,11 @@ import oSplitePane from '../packages/o-splite-pane'
 Vue.use(oSplitePane)
 Vue.use(OMessage)
 
+// 引入整体组件
+import '../packages/index'
+
 Vue.config.productionTip = false
+
 
 
 new Vue({

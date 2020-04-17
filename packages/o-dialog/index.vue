@@ -1,6 +1,6 @@
 <template>
   <div class="o-dialog">
-    
+    ODialog
   </div>
 </template>
 

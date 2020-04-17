@@ -1,6 +1,6 @@
 <template>
   <button 
-    :class="['button', type]"
+    :class="['button', type, { round }]"
     @click="handleClick">
     <slot>无按钮文字</slot>
   </button>
@@ -14,7 +14,12 @@ export default {
     type: {
       type: String,
       default: ''
+    },
+    round: {
+      type: Boolean,
+      default: false
     }
+
   },
 
   methods: {
@@ -28,14 +33,17 @@ export default {
 <style lang="stylus" scoped>
 $primary = #409eff
 $success = #67c23a
+/* 变量 */
 primary()
   background-color $primary
   border-color $primary
   color #fff
+
 success()
   background-color $success
   border-color $success
   color #fff
+
 .button
   cursor pointer
   display inline-block
@@ -49,6 +57,14 @@ success()
   outline none
 .primary
   primary()
+  &:focus, &:hover
+    background #66b1ff
+    color #fff
 .success
   success()
+
+/*圆角*/
+
+.round
+  border-radius 50%
 </style>

@@ -1,7 +1,8 @@
 <template>
   <button 
-    :class="['button', type, { round }]"
-    @click="handleClick">
+    :class="['button', type, { round, disabled }]"
+    @click="handleClick"
+    :disabled="disabled">
     <slot>无按钮文字</slot>
   </button>
 </template>
@@ -16,6 +17,10 @@ export default {
       default: ''
     },
     round: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }
@@ -55,6 +60,11 @@ success()
   border-radius 4px
   color #606266
   outline none
+  &.disabled
+    &, &:focus, &:hover
+      color #c0c4cc
+      cursor not-allowed
+      border-color #ebeef5
 .primary
   primary()
   &:focus, &:hover
@@ -66,5 +76,6 @@ success()
 /*圆角*/
 
 .round
-  border-radius 50%
+  border-radius 20px
+  padding 12px 23px
 </style>

@@ -2,7 +2,9 @@
   <div id="app">
     <div class="header">
       <h1>组件</h1>
+      <o-button disabled >disabled</o-button>
       <o-button  type ="primary">按钮</o-button>
+      <o-button  @click="handelClick('o-row')">row</o-button>
       <o-button  @click="handelClick('o-dialog')">dialog</o-button>
     </div>
     <div class="contaner">

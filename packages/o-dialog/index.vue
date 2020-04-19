@@ -1,15 +1,17 @@
 <template>
 <!-- 全屏遮罩 -->
-  <div class="o-dialog__wrapper">
+  <div class="o-dialog__wrapper" v-show="visible">
     <div class="o-dialog">
       <div class="o-dialog__header">
         <span class="o-dialog__title">提示</span>
-        <button class="o-dialog__button">
+        <button
+          @click="handleClose"
+          class="o-dialog__button">
           x
         </button>
       </div>
       <div class="o-dialog__body">
-        <span>body</span>
+        <slot></slot>
       </div>
       <div class="o-dialog__footer">
         <o-button>取消</o-button>
@@ -21,7 +23,21 @@
 
 <script>
 export default {
-  name: 'ODialog'
+  name: 'ODialog',
+
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  methods: {
+    handleClose() {
+      // 使用update sync 触发父组件值自动更新
+      this.$emit('update:visible', !this.visible)
+    }
+  }
 }
 </script>
 
@@ -59,4 +75,12 @@ export default {
         outline none 
         cursor pointer
         font-size 16px
+    &__body
+      padding 16px   
+    &__footer
+      padding 0 20px 20px 0
+      display flex
+      justify-content flex-end
+      >:last-child
+        margin-left 10px
 </style>

@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <div class="header">
-      <h1>组件</h1>
+      <h1>组件-Button</h1>
       <o-button disabled >disabled</o-button>
       <o-button  type ="primary">按钮</o-button>
-      <o-button  @click="handelClick('o-row')">row</o-button>
-      <o-button  @click="handelClick('o-dialog')">dialog</o-button>
+      <h1>组件-Dialog</h1>
+      <o-button  @click="handelClick">dialog</o-button>
     </div>
     <div class="contaner">
       <component :is="components"></component>
+      <o-dialog :visible.sync="visible"></o-dialog>
     </div>
   </div>
 </template>
@@ -17,13 +18,14 @@
 export default {
   data() {
     return {
-      components: ''
+      components: '',
+      visible: false
     }
   },
 
   methods: {
-    handelClick (com) {
-      this.components = com
+    handelClick () {
+      this.visible = true
     }
   }
 }
